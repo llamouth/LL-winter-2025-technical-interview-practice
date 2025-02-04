@@ -25,7 +25,7 @@ describe('isPalindrome', () => {
     });
 
     test('palindrome with mixed case should return true', () => {
-        expect(isPalindrome('RaCeCaR')).toBe(true);
+        expect(isPalindrome('RaCeCar')).toBe(true);
     });
 
     // Edge cases
@@ -36,4 +36,17 @@ describe('isPalindrome', () => {
     test('palindrome with numbers should work', () => {
         expect(isPalindrome('12321')).toBe(true);
     });
+
+    test('palindrome with numbers and letters', () => {
+        expect(isPalindrome('a2f44f2a')).toBeTruthy()
+        expect(isPalindrome('1ab1')).toBeFalsy()
+    })
+
+    test('palidrome input is a string', () => {
+        expect(()=> {
+            isPalindrome(2)
+        }).toThrow("Wrong input")
+    })
+
+    
 });

@@ -4,5 +4,7 @@
 // // removeDuplicates([1, 1, 1, 1, 1, 1]); // => [1]
 // // removeDuplicates([1, 2, 3, 4, 5]); // => [1, 2, 3, 4, 5]
 module.exports = function removeDuplicates(arr) {
-  // your code here
+  const set = new Set(arr)
+
+  return Array.from(set)
 };

@@ -6,9 +6,13 @@
 
 Question: Imagine you have a collection of vintage records that you like to listen to, but you want to make the records you liked the most easiest to access. How would you organize your collection so that your favorite records are quickly reachable? Consider how you might want to retrieve a record based on how much you like it, rather than just randomly picking. What benefits would this type of organization provide?
 
+
+
 ## Lecture Content (20 minutes)
 
 In this lecture, we will explore the concept of arrays in JavaScript. Arrays are a fundamental data structure that allow us to store and manipulate collections of values.
+
+Dynamic arrays in javascript is when js allocates extra memory for the created array 
 
 ### Introduction to Arrays
 
@@ -116,3 +120,15 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 - https://www.codewars.com/kata/sum-of-prime-indexed-elements
 - https://www.codewars.com/kata/sort-the-odd
 ```
+
+
+
+Array collection of data allocated in contiguous memory 
+theres when you push into a dynamix array if at capacity new space is now allocated
+
+
+# Vocab 
+
+contiguous => right next to eachother 
+index => location of an element in an array 
+capacity => how many elements that array could hold

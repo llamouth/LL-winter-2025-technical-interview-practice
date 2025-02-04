@@ -1,5 +1,6 @@
 // 1. Given two strings, return true if the strings are anagrams and false if not. Ignore spaces.
 
+
 // "aba", "baa" => true
 // "hub", "huc" => false
 // "aa bb", "a b a b" => true

@@ -1,30 +1,40 @@
 // 1. given a string with three characters, return the second character
+const retrieveSecondChar = (str) => {
+    return str.charAt(1);
+}
 
 // 2. get the second and third char from a string. the string will always have atleast three characters
-
-// 'cat' => 'at'
-// 'robbed' => 'ob'
+const retrieveSecondAndThirdChar = (str) => {
+    return `${retrieveSecondChar(str)}${str.charAt(2)}`
+}
 
 // 3. Given a word with 5 letters, return the second through 5th letter
 
-// function getSecondThroughFifthLetter (word){
-//   return word.slice(1);
-// }
+function retrieveSecondThroughFifthLetter (word, n = 5){
+  return word.slice(1, n);
+}
 
 // 4. given a string and a number called N, return the second through the Nth character
 
-// 'schoolbus', 5 => 'choo'
-// 'telephone', 6 => 'eleph
-
-// slice is a ?? method: array and also a string method
-// splice is a array method
+const retrieveSecondAndNthChar = (str, n) => {
+    return retrieveSecondThroughFifthLetter(str, n)
+}
 
 // 5. Given an array of booleans, return an arrray of only false elements
 
-// [true, true, false, true , false] => [false, false]
+const getOnlyFalseElements = (arr) => {
+    // filter through an array and return only false
+    return arr.filter(ele => !ele)
+}
 
 // 6. given a string with two words, put ' the ' between the words and return the string
 
+const insertTheInBetween = (str) => {
+    let arr = str.split(" ")
+    return `${arr[0]} the ${arr[1]}`
+}
+
+console.log(insertTheInBetween('to beach'))
 // 'to beach' => 'to the beach'
 // 'for real' => 'for the real'
 // 'jim john' => 'jim the john'
