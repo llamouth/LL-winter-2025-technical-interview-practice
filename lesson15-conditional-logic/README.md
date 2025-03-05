@@ -8,6 +8,8 @@ Daily Lesson Structure
 
 "Why do we use conditional statements in programming?" Post the question in Slack, have everyone submit their answers simultaneously after a 5-minute timer.
 
+We conditional statements to execute a specific command when a certain condition is met
+
 ## Topic Overview (20 minutes):
 
 Quick review of conditional logic: Review if, else, and else if statements.

@@ -1,7 +1,6 @@
 # Lesson 19: Two Pointers Continued
 
 ## Warm-up (10 minutes)
-
 ## Written Question (5 minutes)
 
 - Question: Explain in your own words why the two-pointer technique is more efficient than a nested loop approach for solving problems like finding a pair that sums to a specific target in a sorted array.

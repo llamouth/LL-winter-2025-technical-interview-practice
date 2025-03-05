@@ -13,4 +13,17 @@ If the weather is sunny, the event should be held outdoors.
 If the weather is cloudy, the event should be held indoors if it is a wedding, and outdoors if it is a picnic or concert.
 If the event is a picnic and the weather is rainy, the event should be canceled. */
 
-function eventPlanner(weather, event) {}
+function eventPlanner(weather, event) {
+    const conditions = {
+        'rainy': true,
+        'sunny': true,
+        'cloudy': true
+    }
+    const events = {
+        'wedding': true,
+        'picnic': true,
+        'concert': true
+    }
+
+    
+}

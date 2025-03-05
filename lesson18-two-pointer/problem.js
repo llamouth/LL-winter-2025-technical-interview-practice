@@ -13,6 +13,17 @@
  * Input: "Hello, World!"
  * Output: false
  */
-function isValidPalindrome(str) {}
+function isValidPalindrome(str) {
+    str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    
+    if (str.length <= 1) {
+        return true;
+    }
+    if (str[0] !== str[str.length - 1]) {
+        return false;
+    }
+    return isValidPalindrome(str.slice(1, str.length - 1));
+
+}
 
 module.exports = isValidPalindrome;

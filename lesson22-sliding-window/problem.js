@@ -10,5 +10,21 @@
 // console.log(maxSubarraySum([2,3], 3)) // null
 
 module.exports = function maxSubArraySum(arr, subArrLength) {
-  // your code here
+  
+  let largestSum = -Infinity
+  let left = 0;
+  let right = subArrLength - 1
+
+  while (right != arr.length) {
+    let tempSum = arr.slice(left, right + 1).reduce((a, b) => a + b)
+
+    if (tempSum > largestSum) {
+      largestSum = tempSum
+    }
+
+    left++
+    right++
+  }
+
+  return largestSum
 };
