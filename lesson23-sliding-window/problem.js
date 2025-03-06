@@ -12,6 +12,38 @@
 // Explanation: Any substring of length 3 contains exactly 3 distinct characters.
 
 module.exports = function longestSubstringKDistinct(str, k) {
-    // your code here
+
+    const seenObj = {}
+    let left = 0
+    let right = 0 
+    let distinctCount = 0
+    let maxLength = 0
+
+    while (right < str.length) {
+        const rightChar = str[right]
+
+        if (!seenObj[rightChar]) {
+            seenObj[rightChar] = 0
+            distinctCount++
+        }
+
+        seenObj[rightChar]++
+        right++
+
+        while (distinctCount > k) {
+            const leftChar = str[left]
+            seenObj[leftChar]--
+
+            if (seenObj[leftChar] === 0) {
+                delete seenObj[leftChar];
+                distinctCount--;
+            }
+            left++;
+        }
+
+        maxLength = Math.max(maxLength, right - left)
+    }
+
+    return maxLength
 };
   
