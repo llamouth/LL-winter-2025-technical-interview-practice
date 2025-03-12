@@ -4,6 +4,8 @@
 
 Create a simple diagram of a family tree. How would you represent this with code?
 
+              
+
 ## Written Question (5 minutes)
 
 In your own words, what are the advantages of encapsulating code in classes rather than just having the code in the global scope? Write a short response.

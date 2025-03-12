@@ -3,7 +3,24 @@
 // input: 1 -> null output: 1 -> null
 
 // head will not be null;
+class Node {
+    constructor(data = null) {
+        this.data = data
+        this.next = null
+    }
+}
 
 module.exports = function reverseNodes(head){
-    // code goes here
+    let currentNode = head;
+    let previousNode = null;
+    let nextNode;
+
+    while(currentNode){
+        nextNode = currentNode.next;
+        currentNode.next = previousNode;
+        previousNode = currentNode;
+        currentNode = nextNode;
+    }
+
+    return previousNode
 };

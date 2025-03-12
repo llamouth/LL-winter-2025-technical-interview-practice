@@ -46,19 +46,43 @@ class LinkedList {
   }
 
   shift(){
-
+    if (!this.head) { return undefined }
+    this.head = this.head.next
+    return this.head
   }
 
   unshift(data){
+    const newNode = new Node(data)
+    newNode.next = this.head
+    this.head = newNode
+    return this
+  }
+
+  pop() {
+    if (!this.head) { return undefined }
+    
+    let node = this.head
+
+    while (node.next.next) {
+      node = node.next
+    }
+    node.next = null
+    return node
 
   }
 
-  pop(){
+  get(index) {
+    if (!this.head || index < 0) { return undefined }
+    
+    let count = 0
+    let currentNode = this.head
 
-  }
-
-  get(index){
-
+    while (currentNode) {
+      if (count == index) { return currentNode }
+      count++
+      currentNode = currentNode.next
+    }
+    return undefined
   }
 
   insert(index, data){
@@ -66,6 +90,22 @@ class LinkedList {
   }
 
   remove(index){
+    if (index == 0) {
+      this.head = this.head.next
+      return this.head
+    }
+
+    let count = 1
+    let currentNode = this.head
+
+    while (currentNode) {
+      if (count === index) {
+        currentNode.next = currentNode.next.next
+        return currentNode.next
+      }
+      count++
+      currentNode = currentNode.next
+    }
 
   }
 
