@@ -86,7 +86,17 @@ class LinkedList {
   }
 
   insert(index, data){
+    let count = 0
+    let currentNode = this.head
 
+    while (currentNode) {
+      if (count == index) {
+        currentNode.data = data
+        return this
+      }
+      count++
+      currentNode = currentNode.next
+    }
   }
 
   remove(index){
