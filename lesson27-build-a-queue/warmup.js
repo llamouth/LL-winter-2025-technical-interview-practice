@@ -23,4 +23,9 @@
 // Incrementing by one gives 9 + 1 = 10.
 // Thus, the result should be [1,0].
  
-
+const increaseByOne = (nums) => {
+    let num = +nums.join("")
+    num++
+    return String(num).split("").map(Number)
+}
+console.log(increaseByOne([1,2,4]))
