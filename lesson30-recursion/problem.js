@@ -10,6 +10,15 @@
  * @param {number[]} arr - An array of numbers
  * @return {number} - The sum of the array's elements
  */
-function sumArrayRecursively(arr) {}
+function sumArrayRecursively(arr) {
+    if (!arr.length) { return 0 }
+    
+    arr[0] += Number(sumArrayRecursively(arr.slice(1)))
+
+    return arr[0]
+}
+
+console.log(sumArrayRecursively([1, 2, 3]))
+
 
 module.exports = sumArrayRecursively;

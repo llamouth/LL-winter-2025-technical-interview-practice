@@ -12,4 +12,8 @@
 
 // 1. Write a SQL query to find the names of all employees who work in the 'Sales' department.
 
+// SELECT FirstName, LastName FROM Employees WHERE Department = 'Sales';
+
 //2. Write a SQL query to find the average salary of employees in the 'Engineering' department.
+
+// SELECT AVG(Salary) FROM Employees WHERE Department = 'Engineering';
