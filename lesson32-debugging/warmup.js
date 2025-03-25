@@ -2,6 +2,7 @@
 // In terminal run code with node warmup.js. If there are any errors, debug them.
 
 function buggyCode() {
+  let x = 15;
   function innerFunction() {
     let y = 5;
     console.log(x + y);
@@ -12,12 +13,11 @@ function buggyCode() {
 
 buggyCode();
 
-let x = 15;
 
 function sumArrayOfNumbers(a) {
   let sum = 0;
   for (let ele of a) {
-    sum += sum + ele;
+    sum += +ele;
   }
   return sum;
 }

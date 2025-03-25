@@ -18,7 +18,4 @@ function sumArrayRecursively(arr) {
     return arr[0]
 }
 
-console.log(sumArrayRecursively([1, 2, 3]))
-
-
 module.exports = sumArrayRecursively;

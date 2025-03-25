@@ -3,9 +3,9 @@ class ShoppingCart {
     this.items = []; // Initialize an empty cart
   }
 
-  addItem(item) {
-    if (item && item.name && item.price >= 0 && item.quantity > 0) {
-      this.items.push(item); // Add valid items to the cart
+  addItem(item, quantity) {
+    if (item && quantity > 0) {
+      this.items.push({name: item, quantity}); // Add valid items to the cart
     } else {
       console.error("Invalid item details provided.");
     }
@@ -20,16 +20,16 @@ class ShoppingCart {
     }
   }
 
-  calculateTotal() {
+  getTotalPrice() {
     return this.items.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, item) => total + item.quantity,
       0
     );
     // Calculate the total price of the items in the cart
   }
 
   checkout(paymentAmount) {
-    const total = this.calculateTotal();
+    const total = this.getTotalPrice();
     if (paymentAmount < total) {
       console.log("Insufficient amount provided.");
       return false; // Checkout fails if the payment is insufficient
@@ -46,16 +46,30 @@ class ShoppingCart {
     } else {
       this.items.forEach((item) => {
         console.log(
-          `${item.quantity}x ${item.name} - $${item.price.toFixed(2)}`
+          `${item.quantity}x ${item.name} - $${item.quantity}`
         );
       });
     }
-    console.log(`Total: $${this.calculateTotal().toFixed(2)}`);
+    console.log(`Total: $${this.getTotalPrice().toFixed(2)}`);
     // Print each item's details and the total cost
+  }
+
+  getItems() {
+    return this.items;
+  }
+
+  updateQuantity(item, quantity) {
+    const currentIdx = this.items.findIndex(i => i.name === item)
+    this.items[currentIdx] = {...this.items[currentIdx], quantity}
   }
 }
 
 // Usage example
 const cart = new ShoppingCart();
+cart.addItem("Apple", 2);
+cart.removeItem("Apple")
+
+cart.printReceipt()
+cart.checkout(1)
 
 module.exports = ShoppingCart;
